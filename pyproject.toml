@@ -1,0 +1,26 @@
+[tool.flake8]
+ignore = ["E501", "F401", "E402", "E203"]
+exclude = [
+    "venv",
+    ".git",
+    ".cache",
+    ".pytest_cache",
+    "__pycache__"
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+exclude = '''
+/(
+    | __pycache__
+    | conda_dev_env
+    | venv
+    | \..*
+    | README\.md
+    | requirements\.txt
+    | tests/\..*
+    | features/.*\.feature
+)/
+'''
